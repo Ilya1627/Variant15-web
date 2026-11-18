@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Форма — Илон Маск · Википедия</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p>Илон Маск</p>
+    </header>
+
+    <main class="page">
+        <nav>
+            <a href="index1.html">Главная</a>
+            <a href="catalog1.html">Каталог</a>
+        </nav>
+
+        <h2>Форма заявки</h2>
+        <p>Учебная форма. Данные пока не сохраняются.</p>
+
+        <form method="get" class="request-form">
+            <p class="form-field">
+                <label for="company">Выберите компанию</label>
+                <select id="company" name="company" required>
+                    <option value="">Выберите из списка</option>
+                    <option value="spacex">SpaceX</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="neuralink">Neuralink</option>
+                </select>
+            </p>
+            <p class="form-field">
+                <label for="quantity">Количество человек (от 1)</label>
+                <input id="quantity" name="quantity" type="number" min="1" step="1" value="1" required>
+            </p>
+
+            <p class="form-field">
+                <label for="notes">Комментарий к заявке</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Например, удобная дата или особые пожелания"></textarea>
+            </p>
+
+            <div class="checkbox-group">
+                <input id="extra1" name="extra1" type="checkbox" value="yes" checked>
+                <label for="extra1">Нужен русскоязычный гид</label>
+            </div>
+            <div class="checkbox-group">
+                <input id="extra2" name="extra2" type="checkbox" value="yes">
+                <label for="extra2">Нужен трансфер</label>
+            </div>
+
+            <p class="form-field" style="margin-top: 20px;">
+                <label for="level">Уровень срочности</label>
+                <div class="range-container">
+                    <span class="range-text">1 — Не срочно</span>
+                    <input id="level" name="level" type="range" min="1" max="5" step="1" value="3">
+                    <span class="range-text">5 — Срочно</span>
+                </div>
+            </p>
+
+            <p style="margin-top: 20px;">
+                <button type="submit">Отправить заявку</button>
+            </p>
+
+            <!-- Место для вывода результата -->
+            <p id="result" role="status" aria-live="polite" style="font-weight: bold; color: #96384C; margin-top: 15px;"></p>
+        </form>
+
+        <p class="page-footer">Учебный прототип · Вариант 15</p>
+    </main>
+
+    <!-- Подключение скрипта -->
+    <script src="form.js" defer></script>
+</body>
+</html>
